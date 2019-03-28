@@ -1,0 +1,13 @@
+{% include "header.html" %}
+<div class="container">
+    <div class="type-name">
+        <form action="/hello" method="post">
+            <label for="Name">Type your name:</label>
+            <br>
+            <div class="spacing"></div>
+            <input class="input-field input-name" type="text"  name="name" id="name" required>
+            <br>
+            <button class="btn" type="submit" >Submit</button>
+        </form>
+    </div>
+{% include "footer.html"%}

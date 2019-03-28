@@ -1,0 +1,33 @@
+{% include "header.html"%}
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="form-group">
+            <form name="email" action="http://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.pl" method="get">
+                <input type="hidden" name="recipient" value="wykwok1@sheffield.ac.uk">
+
+                <label for="user-name">Your Name </label>
+                <br>
+                <input class="input-field input-form" type="text"  name="User name" id="user-name" required placeholder="Enter your name here">
+                <br>
+
+                <label for="user-email">Your Email </label>
+                <br>
+                <input class="input-field input-form" type="email"  name="User email" id="user-email" required placeholder="Enter your email address here" >
+                <br>
+
+                <label for="subject">Subject</label>
+                <br>
+                <input class="input-field input-form" type="text"  name="Subject of message" id="subject" required placeholder="Enter the subject of your message here">
+                <br>
+
+                <label for="message">Your Message </label>
+                <br>
+                <textarea class="input-field input-form comment-field" name="Message" id="message" rows="7" required placeholder="Message" ></textarea>
+                <br>
+
+                <button class="btn" type="submit">Submit</button>
+                <button class="btn" type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+{% include "footer.html"%}

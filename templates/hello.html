@@ -1,0 +1,31 @@
+{% include "header.html"%}
+<div class="container">
+		<div class="main">
+				<!-- Display translation of word 'good morning' stored in hello variable and name
+			   given by the user-->
+				<h1><span id="hello">{{hello}} </span><span id="helloname">{{hello_data["name"]}}</span></h1>
+		</div>
+		<div class="buttonPanel">
+				<!--creation of buttons with different languages-->
+			  {% for x in range(20) %}
+						<button id={{code[x]}} onclick="{{language[x]}}()">{{language[x]}}</button>
+			  {%endfor%}
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+				//definitions of all onclick functions
+    		{% for x in range (0,20) %}
+	     			function {{language[x]}}() {
+				 				$.get('/translate?code={{code[x]}}', function(data) {
+										const hello = document.getElementById("hello");
+										hello.textContent = data;
+								});
+								//change colour of the background and text
+	        			document.getElementById("hello").style.color = "{{font[x]}}";
+								document.getElementById("helloname").style.color = "{{font[x]}}";
+          			document.getElementsByTagName("BODY")[0].style.backgroundColor="{{background[x]}}";
+	    			}
+      	{%endfor%}
+			</script>
+	</div>
+	{% include "footer.html"%}
