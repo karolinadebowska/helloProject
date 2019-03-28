@@ -55,4 +55,7 @@ def translate():
     print(translation)
     return translation
 
-app.run(debug=True)
+if 'PORT' in os.environ:
+     app.run(host='0.0.0.0', port=int(os.environ['PORT']))
+else:
+     app.run(debug=True)
